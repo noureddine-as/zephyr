@@ -1,0 +1,16 @@
+# Kconfig - RISCV_LOWRISC SOC configuration options
+#
+# Copyright (c) 2017 Jean-Paul Etienne <fractalclone@gmail.com>
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+choice
+prompt "lowRISC SOC implementation"
+depends on SOC_SERIES_RISCV_LOWRISC
+
+config SOC_RISCV_LOWRISC
+	bool "lowRISC SOC implementation"
+	select ATOMIC_OPERATIONS_C
+
+endchoice
