@@ -5,16 +5,16 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-menuconfig GPIO_SIFIVE
-	bool "SiFive Freedom Processor GPIO driver"
-	depends on SOC_RISCV_SIFIVE_FREEDOM
+menuconfig GPIO_LOWRISC
+	bool "lowRISC GPIO driver"
+	depends on SOC_RISCV_LOWRISC
 	select HAS_DTS_GPIO
 	help
-	  Enable driver for the SiFive Freedom GPIO controller.
+	  Enable driver for the lowRISC controller.
 
 	  Says n if not sure.
 
-if GPIO_SIFIVE
+if GPIO_LOWRISC
 
 config GPIO_SIFIVE_0_PRIORITY
 	int "GPIO 0 interrupt priority"
