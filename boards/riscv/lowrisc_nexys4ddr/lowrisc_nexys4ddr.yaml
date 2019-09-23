@@ -1,0 +1,13 @@
+identifier: lowrisc_chip
+name: lowRISC Chip softcore CPU on Nexys 4 DDR FPGA
+type: mcu
+simulation: qemu
+arch: riscv64
+ram: 16
+toolchain:
+  - zephyr
+testing:
+  default: true
+  ignore_tags:
+    - net
+    - bluetooth
