@@ -7,7 +7,7 @@
 
 / {
 	model = "SiFive HiFive 1";
-	compatible = "lowrisc,nexys4ddr";
+	compatible = "sifive,hifive1";
 
 	chosen {
 		zephyr,console = &uart0;

@@ -129,4 +129,6 @@ source "drivers/serial/Kconfig.rtt"
 
 source "drivers/serial/Kconfig.xlnx"
 
+source "drivers/serial/Kconfig.lowrisc"
+
 endif # SERIAL
