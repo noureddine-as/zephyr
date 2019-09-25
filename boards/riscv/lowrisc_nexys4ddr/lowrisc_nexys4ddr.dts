@@ -3,11 +3,11 @@
 
 /dts-v1/;
 
-#include <riscv32-fe310.dtsi>
+#include <lowrisc-nexys4ddr.dtsi>
 
 / {
-	model = "SiFive HiFive 1";
-	compatible = "sifive,hifive1";
+	model = "lowRISC SoC on Nexys 4 DDR";
+	compatible = "lowrisc,lowrisc_nexys4ddr";
 
 	chosen {
 		zephyr,console = &uart0;

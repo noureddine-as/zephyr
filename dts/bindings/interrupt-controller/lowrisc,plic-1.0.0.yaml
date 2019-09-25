@@ -1,0 +1,18 @@
+# Copyright (c) 2018, SiFive Inc.
+#
+# SPDX-License-Identifier: Apache-2.0
+
+title: lowRISC PLIC
+description: lowRISC RISCV-V platform-local interrupt controller
+
+inherits:
+    !include riscv,plic0.yaml
+
+properties:
+    compatible:
+        constraint: "lowrisc,plic-1.0.0"
+
+    riscv,ndev:
+        type: int
+        description: Number of external interrupts supported
+        category: required
