@@ -104,6 +104,15 @@ config PLIC
 	  Platform Level Interrupt Controller provides support
 	  for external interrupt lines defined by the RISC-V SoC;
 
+config PLIC_LOWRISC
+	bool "LOWRISC version of the Platform Level Interrupt Controller (PLIC)"
+	default y
+	depends on SOC_FAMILY_RISCV_PRIVILEGE
+	select RISCV_HAS_PLIC
+	help
+	  lowRISC version of the Platform Level Interrupt Controller provides support
+	  for external interrupt lines defined by the RISC-V SoC;
+
 config VEXRISCV_LITEX_IRQ
 	bool "VexRiscv LiteX Interrupt controller"
 	depends on SOC_RISCV32_LITEX_VEXRISCV
