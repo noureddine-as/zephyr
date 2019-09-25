@@ -11,7 +11,7 @@ menuconfig UART_LOWRISC
 	select SERIAL_HAS_DRIVER
 	select SERIAL_SUPPORT_INTERRUPT
 	help
-	  This option enables the lowRISC serial driver.
+	  This option enables the  lowRISC serial driver.
 
 # ---------- Port 0 ----------
 

@@ -13,8 +13,8 @@ menuconfig PINMUX_LOWRISC
 
 if PINMUX_LOWRISC
 
-config PINMUX_SIFIVE_0_NAME
-	string "SIFIVE pinmux 0 driver name"
+config PINMUX_LOWRISC_0_NAME
+	string "lowRISC pinmux 0 driver name"
 	default "pinmux0"
 
 endif # PINMUX_LOWRISC

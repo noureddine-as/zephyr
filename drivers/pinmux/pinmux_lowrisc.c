@@ -33,14 +33,14 @@ static int pinmux_sifive_set(struct device *dev, u32_t pin, u32_t func)
 {
 	volatile struct pinmux_sifive_regs_t *pinmux = DEV_PINMUX(dev);
 
-	if (func > SIFIVE_PINMUX_IOF1 ||
-	    pin >= SIFIVE_PINMUX_PINS)
+	if (func > LOWRISC_PINMUX_IOF1 ||
+	    pin >= LOWRISC_PINMUX_PINS)
 		return -EINVAL;
 
-	if (func == SIFIVE_PINMUX_IOF1)
-		pinmux->iof_sel |= (SIFIVE_PINMUX_IOF1 << pin);
+	if (func == LOWRISC_PINMUX_IOF1)
+		pinmux->iof_sel |= (LOWRISC_PINMUX_IOF1 << pin);
 	else
-		pinmux->iof_sel &= ~(SIFIVE_PINMUX_IOF1 << pin);
+		pinmux->iof_sel &= ~(LOWRISC_PINMUX_IOF1 << pin);
 
 	/* Enable IO function for this pin */
 	pinmux->iof_en |= (1 << pin);
@@ -52,12 +52,12 @@ static int pinmux_sifive_get(struct device *dev, u32_t pin, u32_t *func)
 {
 	volatile struct pinmux_sifive_regs_t *pinmux = DEV_PINMUX(dev);
 
-	if (pin >= SIFIVE_PINMUX_PINS ||
+	if (pin >= LOWRISC_PINMUX_PINS ||
 	    func == NULL)
 		return -EINVAL;
 
-	*func = (pinmux->iof_sel & (SIFIVE_PINMUX_IOF1 << pin)) ?
-		SIFIVE_PINMUX_IOF1 : SIFIVE_PINMUX_IOF0;
+	*func = (pinmux->iof_sel & (LOWRISC_PINMUX_IOF1 << pin)) ?
+		LOWRISC_PINMUX_IOF1 : LOWRISC_PINMUX_IOF0;
 
 	return 0;
 }
@@ -90,10 +90,10 @@ static const struct pinmux_driver_api pinmux_sifive_driver_api = {
 };
 
 static const struct pinmux_sifive_config pinmux_sifive_0_config = {
-	.base = SIFIVE_PINMUX_0_BASE_ADDR,
+	.base = LOWRISC_PINMUX_0_BASE_ADDR,
 };
 
-DEVICE_AND_API_INIT(pinmux_sifive_0, CONFIG_PINMUX_SIFIVE_0_NAME,
+DEVICE_AND_API_INIT(pinmux_sifive_0, CONFIG_PINMUX_LOWRISC_0_NAME,
 		    &pinmux_sifive_init, NULL,
 		    &pinmux_sifive_0_config,
 		    PRE_KERNEL_1, CONFIG_KERNEL_INIT_PRIORITY_DEFAULT,
