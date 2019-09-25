@@ -4,8 +4,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-#ifndef _SIFIVE_PRCI_H
-#define _SIFIVE_PRCI_H
+#ifndef _LOWRISC_PRCI_H
+#define _LOWRISC_PRCI_H
 
 #define Z_REG32(p, i) (*(volatile uint32_t *) ((p) + (i)))
 #define PRCI_REG(offset) Z_REG32(PRCI_BASE_ADDR, offset)
@@ -60,4 +60,4 @@
 #define PROCMON_SEL_PLLOUTDIV 2
 #define PROCMON_SEL_PROCMON   3
 
-#endif /* _SIFIVE_PRCI_H */
+#endif /* _LOWRISC_PRCI_H */
