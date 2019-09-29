@@ -40,6 +40,7 @@ void foo()
     }
 }
 
+// works on lowRISC-Nexys4DDR !!
 
 volatile int wait = 1;
 int main(void)
