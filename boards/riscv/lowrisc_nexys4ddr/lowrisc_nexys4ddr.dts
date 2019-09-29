@@ -1,52 +1,20 @@
-/* Copyright (c) 2019 BayLibre SAS */
-/* SPDX-License-Identifier: Apache-2.0 */
+/*
+ * Copyright (c) 2018 - 2019 Antmicro <www.antmicro.com>
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
 
 /dts-v1/;
 
 #include <lowrisc-nexys4ddr.dtsi>
 
+
 / {
-	model = "lowRISC SoC on Nexys 4 DDR";
+	model = "lowRISC SoC on Nexys4DDR";
 	compatible = "lowrisc,lowrisc_nexys4ddr";
 
 	chosen {
-		zephyr,console = &uart0;
-		zephyr,shell-uart = &uart0;
-		zephyr,sram = &dtim;
 		zephyr,flash = &flash0;
-	};
-};
-
-&cpu {
-	riscv,isa = "rv64imac";
-};
-
-&gpio0 {
-	status = "okay";
-};
-
-&uart0 {
-	status = "okay";
-	current-speed = <115200>;
-	clock-frequency = <16000000>;
-};
-
-&uart1 {
-	clock-frequency = <16000000>;
-};
-
-&spi0 {
-	status = "okay";
-
-	#address-cells = <1>;
-	#size-cells = <0>;
-	reg = <0x10014000 0x1000 0x20400000 0xc00000>;
-	flash0: flash@0 {
-		compatible = "issi,is25lp128", "jedec,spi-nor";
-		label = "FLASH0";
-		jedec-id = [96 60 18];
-		reg = <0>;
-		// Dummy entry
-		spi-max-frequency = <0>;
+		zephyr,sram = &sram0;
 	};
 };
